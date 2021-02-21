@@ -4,9 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>¡A pueblear!</title>
+  <script src ="sign.js"></script>
+  <script src ="contact.js"></script>
+  <script src ="login.js"></script>
+  <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-  <script type="module" src="main.js"></script>
+  
+  <ul class="topbar">
+    <li class="elm-topbar"><a href="sign" onclick="onNavigate('/sign'); return false;">Registro</a></li>
+    <li class="elm-topbar"><a href="contact" onclick="onNavigate('/contact'); return false;">Contacto</a></li>
+    <li class="elm-topbar"><a href="login" onclick="onNavigate('/login'); return false;">Ingresar</a></li>
+  </ul>
+
+  
+  
+  <div id="root"></div>
+  
+
+
+  <script src="main.js" type="module"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
 </body>
 </html>
