@@ -8,10 +8,10 @@ const rootDiv = document.getElementById("root");
 
 export const routes = {
   '/': home,
-  '/acercaDe' : about,
-  '/contacto' : contact,
-  '/iniciarSesion' : login,
-  '/registro' : signUp,
+  '/about' : about,
+  '/contact' : contact,
+  '/login' : login,
+  '/signUp' : signUp,
 }
 
 export const onNavigate = (pathname) => { 
