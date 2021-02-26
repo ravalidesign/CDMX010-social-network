@@ -90,3 +90,28 @@ img{
    margin-bottom: 8px;
    
 }
+
+.mainmenu{
+    font-size: 15px;
+    padding: 15px 30px;
+    background-color: #B82787;
+    text-align: right;
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 3px;
+    margin-right: 3px;
+    flex-direction:column-reverse;
+    
+
+  
+}
+.mainmenu a {
+    text-decoration: none;
+    color: white;
+   margin-right: 20px;
+
+
+}
+.imagenPortada{
+    
+}

@@ -1,9 +1,4 @@
-// aqui exportaras las funciones que necesites
 
-//export const myFunction = () => {
-// aqui tu codigo
-//console.log('Hola mundo!');
-//};
 const firebaseConfig = {
     apiKey: "AIzaSyCZU80N-XD_ez5CMvqUxsqPEnkTOifQLRU",
     authDomain: "social-network-c9af4.firebaseapp.com",
