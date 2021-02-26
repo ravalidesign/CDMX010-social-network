@@ -27,11 +27,6 @@ const html = `
         onNavigate('/signUp')
     })
 
-    document.getElementById('about').addEventListener('click', (e) => {
-        e.preventDefault()
-        onNavigate('/about')
-    })
-        
     /*document.getElementById('mainMenu').addEventListener('click', (e) => {
             e.preventDefault()
             onNavigate('/')
