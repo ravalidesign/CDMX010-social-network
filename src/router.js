@@ -3,7 +3,7 @@ import about from "./about.js";
 import contact from "./contact.js";
 import login from "./login.js";
 import signUp from "./signUp.js";
-
+import wall from "./wall.js";
 
 const rootDiv = document.getElementById("root");
 
@@ -13,6 +13,7 @@ export const routes = {
     '/contact' :contact,
     '/login' : login,
     '/signUp' : signUp,
+    '/wall' : wall,
   }
   
   export const onNavigate = (pathname) => { 
