@@ -1,15 +1,19 @@
-import {onNavigate} from './router.js'
+import { onNavigate } from './router.js'
 
 export const home = (target) => {
-const html = `
-    <ul class="topbar">
-        <li class="elm-topbar"><a id="login" href="#">Iniciar sesion</a></li>
-        <li class="elm-topbar"><a id="contact" href="#">Contacto</a></li>
-        <li class="elm-topbar"><a id="signUp" href="#">Registro</a></li>
-        <li class="elm-topbar"><a id="about" href="#">Acerca de:</a></li>
-        <li class="elm-topbar"><a id="mainMenu" href="#">menuPrincipal</a></li>
-    </ul>
+    const html = `
+<nav class= "mainmenu" id= "topbar">
+        <a id="mainMenu" href="#">Home</a>
+        <a id="about" href="#">Acerca de</a> 
+        <a id="login" href="#">Iniciar sesion</a>
+        <a id="signUp" href="#">Registro</a>
+        <a id="contact" href="#">Contacto</a> 
+
+        
+    </nav>
+    <img class= "imagenPortada" src = "Assets/backgroundoimg.jpg">
     `
+    /*"Acerca de" será pantalla de publicacion*/
     target.innerHTML = html
 
     document.getElementById('login').addEventListener('click', (e) => {
@@ -31,12 +35,12 @@ const html = `
         e.preventDefault()
         onNavigate('/about')
     })
-        
+
     /*document.getElementById('mainMenu').addEventListener('click', (e) => {
             e.preventDefault()
             onNavigate('/')
         })*/
-    
-    }       
-     export default home;
+
+}
+export default home;
 
