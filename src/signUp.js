@@ -1,8 +1,7 @@
 
 import { createUser } from "./lib/aut.js";
 
- 
-export const sign = (target) =>{
+ export const sign = (target) =>{
     const html= `
 <h1 id="titulo">¡A Pueblear!</h1>
 <section class="form-register">
