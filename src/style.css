@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Salsa&display=swap');
 
-#titulo{
+#title{
     font-family: 'Salsa', cursive;
     font-size:20px;
     color:#B82787;
@@ -18,6 +18,8 @@ font-family: 'Lato', sans-serif;
     
 
 }
+
+/* formulario de Registro  */
 
 .form-register {
     width: 300px;
@@ -57,7 +59,7 @@ font-family: 'Lato', sans-serif;
     width:150px;
     text-align: center;
 }
-.boton {
+.buttonSignUp {
     height: 22px;
     width: 110px;
     background: #B82787;
@@ -70,7 +72,7 @@ font-family: 'Lato', sans-serif;
     border-color: transparent;
    }
 
-#redes{
+#socialIcons{
     position:relative;
     background-color:transparent;
     width: 160px;
@@ -90,6 +92,34 @@ img{
    margin-bottom: 8px;
    
 }
+
+/* Formulario de Iniciar sesión */
+
+.formLogin{
+width: 300px;
+background:whitesmoke;
+padding: 40px 70px 40px 75px;
+margin: auto;
+margin-top: 20px;
+border-radius: 4px;
+color: white;
+border-color:#020102;
+box-shadow: 30px 25px 70px -50px rgb(46, 43, 43);
+}
+
+.buttonLogin{
+    background: #B82787;
+    font-size: 10px;
+    color: white;
+    border-radius: 2px;
+    border-radius: 2px;
+    margin-left: 20px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    border-color: transparent;
+
+}
+
 
 .mainmenu{
     font-size: 15px;
