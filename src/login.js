@@ -4,11 +4,11 @@ export const login = (target) =>{
     const html= `
 <h1>I am login Page</h1>
 
-
-<input class="" type="text" name="nombre" id="emaillogin" placeholder="Ingrese Correo">
-<input class="" type="password" name="nombre" id="passwordlogin" placeholder="Ingrese Contraseña">
-<button class=" " type="button" id ="entrar"> Iniciar Sesión</button>
-
+<section class="formLogin">
+<input class="controls" type="text" name="nombre" id="emaillogin" placeholder="Ingrese Correo">
+<input class="controls" type="password" name="nombre" id="passwordlogin" placeholder="Ingrese Contraseña">
+<button class="buttonLogin" type="button" id ="entrar"> Iniciar Sesión</button>
+</section>
 
 `
 target.innerHTML = html
