@@ -2,16 +2,20 @@ import { onNavigate } from './router.js'
 
 export const home = (target) => {
     const html = `
+    <header>
 <nav class= "mainmenu" id= "topbar">
-        <a id="mainMenu" href="#">Home</a>
-        <a id="about" href="#">Acerca de</a> 
-        <a id="login" href="#">Iniciar sesion</a>
-        <a id="signUp" href="#">Registro</a>
-        <a id="contact" href="#">Contacto</a> 
-
+        <label for ="btnmenu"><img src="../assets/burgerbutton.png"></label>
+        <ul>
+        <li><a id="mainMenu" href="#">Home</a> </li>
+        <li><a id="about" href="#">Acerca de</a> </li>
+        <li><a id="login" href="#">Iniciar sesion</a></li>
+        <li><a id="signUp" href="#">Registro</a></li>
+        <li><a id="contact" href="#">Contacto</a> </li>
+        </ul>
         
     </nav>
-    <img class= "imagenPortada" src = "Assets/backgroundoimg.jpg">
+    </header>
+   
     `
     /*"Acerca de" será pantalla de publicacion*/
     target.innerHTML = html
