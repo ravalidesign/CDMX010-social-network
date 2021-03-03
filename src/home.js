@@ -1,15 +1,23 @@
-import {onNavigate} from './router.js'
+import { onNavigate } from './router.js'
 
 export const home = (target) => {
-const html = `
-    <ul class="topbar">
-        <li class="elm-topbar"><a id="login" href="#">Iniciar sesion</a></li>
-        <li class="elm-topbar"><a id="contact" href="#">Contacto</a></li>
-        <li class="elm-topbar"><a id="signUp" href="#">Registro</a></li>
-        <li class="elm-topbar"><a id="about" href="#">Acerca de:</a></li>
-        <li class="elm-topbar"><a id="mainMenu" href="#">menuPrincipal</a></li>
-    </ul>
+    const html = `
+    <header>
+<nav class= "mainmenu" id= "topbar">
+        <label for ="btnmenu"><img src="../assets/burgerbutton.png"></label>
+        <ul>
+        <li><a id="mainMenu" href="#">Home</a> </li>
+        <li><a id="about" href="#">Acerca de</a> </li>
+        <li><a id="login" href="#">Iniciar sesion</a></li>
+        <li><a id="signUp" href="#">Registro</a></li>
+        <li><a id="contact" href="#">Contacto</a> </li>
+        </ul>
+        
+    </nav>
+    </header>
+   
     `
+    /*"Acerca de" será pantalla de publicacion*/
     target.innerHTML = html
 
     document.getElementById('login').addEventListener('click', (e) => {
@@ -27,16 +35,11 @@ const html = `
         onNavigate('/signUp')
     })
 
-    document.getElementById('about').addEventListener('click', (e) => {
-        e.preventDefault()
-        onNavigate('/about')
-    })
-        
     /*document.getElementById('mainMenu').addEventListener('click', (e) => {
             e.preventDefault()
             onNavigate('/')
         })*/
-    
-    }       
-     export default home;
+
+}
+export default home;
 
