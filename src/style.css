@@ -88,9 +88,29 @@ img{
    max-height: 25px;
    max-width: 25px;
    border-color: transparent;
-   margin-right: 20px;
+   margin-right: -300px;
    margin-bottom: 8px;
+   background-color: transparent;
    
+}
+
+
+#btnmenu {
+    display: none;
+}
+
+header label {
+    display: none;
+    width: 25px;
+    height: 25px;
+   
+
+}
+header label ul li:hover{
+    cursor:cell; 
+    background: #B82787;
+    flex-direction: column-reverse;
+    
 }
 
 /* Formulario de Iniciar sesión */
@@ -121,27 +141,70 @@ box-shadow: 30px 25px 70px -50px rgb(46, 43, 43);
 }
 
 
+
 .mainmenu{
     font-size: 15px;
     padding: 15px 30px;
     background-color: #B82787;
     text-align: right;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 0px;
     margin-left: 3px;
     margin-right: 3px;
     flex-direction:column-reverse;
-    
+    }
 
-  
+.mainmenu ul {
+    margin: 0; 
+    list-style: none;
+    display: flex;
+
+}
+.mainmenu li a {
+    display: block;
+    text-decoration: none;
 }
 .mainmenu a {
     text-decoration: none;
     color: white;
    margin-right: 20px;
+    display: flex;
 
 
 }
 .imagenPortada{
     
+}
+
+/* Inicio de Responsive  */
+/* @media all and (max-width:500px){
+    .header {
+         float: right;
+        position: absolute;
+        top: 0;
+        background-color: #B82787;
+        display: flex;
+    } */
+  @media(max-width:500px){
+    header label{
+        display:block;
+    }
+    .mainmenu{
+        
+        float:right;
+        height: 20px;
+        width: 100%;
+         }
+
+    .mainmenu ul {
+    flex-direction: column;
+    visibility: hidden;
+    }
+
+    #btnmenu{
+        position: absolute;
+       background:#B82787;
+       margin-right: -300px;
+       
+        }
 }
