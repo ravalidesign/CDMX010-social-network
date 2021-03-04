@@ -3,6 +3,7 @@ import { onNavigate } from './router.js'
 export const home = (target) => {
     const html = `
     <header>
+    
 <nav class= "mainmenu" id= "topbar">
         <label for ="btnmenu"><img src="../assets/burgerbutton.png"></label>
         <ul>
@@ -15,8 +16,10 @@ export const home = (target) => {
         
     </nav>
     </header>
-   
+    
+    <div><img class="imgp" src="../Assets/backgroundtwo.jpg"></div>
     `
+    
     /*"Acerca de" será pantalla de publicacion*/
     target.innerHTML = html
 

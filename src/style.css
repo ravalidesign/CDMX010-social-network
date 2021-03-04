@@ -172,9 +172,7 @@ box-shadow: 30px 25px 70px -50px rgb(46, 43, 43);
 
 
 }
-.imagenPortada{
-    
-}
+
 
 /* Inicio de Responsive  */
 /* @media all and (max-width:500px){
@@ -207,4 +205,12 @@ box-shadow: 30px 25px 70px -50px rgb(46, 43, 43);
        margin-right: -300px;
        
         }
-}
+  .imgp{
+    max-height: 200px;
+    max-width: 375px;
+         
+         }
+
+
+
+        }
