@@ -14,30 +14,85 @@ placeholder="Escribe un post :D"></textarea>
 </div>
 <button class="btnpost" id="btnpost"> Comparte! </button>
 </form>
+
+
+<h3 id="title"></h3>
+
+
 `
 
 
 target.innerHTML = html
 
 const db = firebase.firestore();
+
+
+function save(){
+    
+    const title = document.getElementById("post-title").value;
+    const posted = document.getElementById("post-description").value;
+
+    db.collection("posts").add ({
+        title: title,
+        posted: posted, 
+     }) 
+     .then(function (docRef){
+         console.log(docRef.id);
+         const title = document.getElementById("post-title").value="";
+    const posted = document.getElementById("post-description").value="";
+     })
+    .catch(function (error){
+        console.log(error)
+    })
+}
+
 const btnpost=document.getElementById("btnpost");
-btnpost.addEventListener("click", async (e) =>{
- 
-e.preventDefault();
+btnpost.addEventListener("click", e =>{
+    e.preventDefault();
+    save();
+})
 
-const title = document.getElementById("post-title").value;
-const posted = document.getElementById("post-description").value;
-const response = await db.collection("posts").doc().set({
-    title: title,
-    posted: posted, 
-}) 
-console.log(response)
-
-
-console.log(title, posted)
-});
+//leyendo datos//
+const titleDos= document.getElementById("title")
+db.collection("posts").get().then((querySnapshot) => {
+    titleDos.innerHTML="";
+    querySnapshot.forEach(doc => {
+        console.log(`${doc.id} => ${doc.data()}`);
+        titleDos.innerHTML +=`
+        <h2>Titulo</h2>
+        <h4>${doc.data().title}</h4>
+        <h2>publicación</h2>
+        <h4>${doc.data().posted}</h4>
+        `
+    });
+})
 
 }
 
-
 export default wall;
+
+
+
+// const db = firebase.firestore();
+// const btnpost=document.getElementById("btnpost");
+// btnpost.addEventListener("click", async (e) =>{
+ 
+// e.preventDefault();
+
+// const title = document.getElementById("post-title").value;
+// const posted = document.getElementById("post-description").value;
+// const response = await db.collection("posts").doc().set({
+//     title: title,
+//     posted: posted, 
+// }) 
+// console.log(response)
+
+
+// console.log(title, posted)
+// });
+
+// }
+
+
+
+ 
