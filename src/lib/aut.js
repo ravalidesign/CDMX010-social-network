@@ -39,6 +39,8 @@ firebase.auth().createUserWithEmailAndPassword(email,password)
 export function endSesion(){
     firebase.auth().signOut().then(res =>{
       document.location.href="/";
+    }).catch(error => {
+        alert (err);
     })
   }
 
