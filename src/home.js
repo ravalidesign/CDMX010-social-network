@@ -3,8 +3,11 @@ import { onNavigate } from './router.js'
 export const home = (target) => {
     const html = `
     <header>
-<nav class= "mainmenu" id= "topbar">
-        <label for ="btnmenu"><img src="../assets/burgerbutton.png"></label>
+
+        <input type="checkbox" id="btnmenu">
+        <label for ="btnmenu"><img src="../assets/burger.png"></label>
+        
+        <nav class="menu">
         <ul>
         <li><a id="mainMenu" href="#">Home</a> </li>
         <li><a id="about" href="#">Acerca de</a> </li>
@@ -12,8 +15,8 @@ export const home = (target) => {
         <li><a id="signUp" href="#">Registro</a></li>
         <li><a id="contact" href="#">Contacto</a> </li>
         </ul>
-        
-    </nav>
+        </nav>
+    
     </header>
    
     `

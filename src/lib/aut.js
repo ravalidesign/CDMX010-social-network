@@ -35,8 +35,14 @@ firebase.auth().createUserWithEmailAndPassword(email,password)
     alert("Ocurrio un error");
 })
 }
-
-
+// Cerrar sesión //
+export function endSesion(){
+    firebase.auth().signOut().then(res =>{
+      document.location.href="/";
+    }).catch(error => {
+        alert (err);
+    })
+  }
 
 
 
