@@ -199,3 +199,21 @@ header label:hover{
        }
       
 }
+/* Aqui empiezan los post  */
+.postContainer{
+    background-color:indigo;
+    display: flex;
+    flex-direction: column;
+    
+}
+#post-title{
+background-color: grey;
+margin-bottom: 10px;
+}
+#post-description{
+    background-color: grey;
+    resize: none;
+    }
+.btnpost{
+    background-color: lightblue;
+}
