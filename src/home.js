@@ -17,7 +17,7 @@ export const home = (target) => {
     </nav>
     </header>
     
-    <div><img class="imgp" src="../Assets/backgroundtwo.jpg"></div>
+    <div class="imgp" <img src="../Assets/backgroundtwo" width="100%" ></div>
     `
     
     /*"Acerca de" será pantalla de publicacion*/

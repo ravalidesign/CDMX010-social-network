@@ -13,7 +13,7 @@ import { createUser } from "./lib/aut.js";
 <button class=" buttonSignUp" type="button" id ="register"> Ingresar</button>
 <p id="pRegistro">ó registrate con<p>
 
-<div id="socialIcons">
+<div class="socialIcons">
 <button class="btn-r" id="facebook-btn"><img src="../Assets/facebook.png.png"></button>
 <button class="btn-r" id="google-btn"><img src="../Assets/google.png.png"></button>
 <button class="btn-r" id="Twitter-btn"><img src="../Assets/twittericon.png.png"></button>

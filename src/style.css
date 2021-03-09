@@ -75,8 +75,8 @@ font-family: 'Lato', sans-serif;
 #socialIcons{
     position:relative;
     background-color:transparent;
-    width: 160px;
-    height: 40px;
+    width: 25px;
+    height: 25px;
     margin-left: 10px;
 }
 .btn-r{
@@ -84,15 +84,19 @@ font-family: 'Lato', sans-serif;
     background: transparent;
 }
  
-img{
+.socialIcons{
    max-height: 25px;
    max-width: 25px;
    border-color: transparent;
    margin-right: -300px;
    margin-bottom: 8px;
-   background-color: transparent;
+   background-color: transparent;}
    
-}
+
+.imgp{
+    max-width: 500px;
+    margin: 0 auto;
+         }
 
 
 #btnmenu {
@@ -205,12 +209,7 @@ box-shadow: 30px 25px 70px -50px rgb(46, 43, 43);
        margin-right: -300px;
        
         }
-  .imgp{
-    max-height: 200px;
-    max-width: 375px;
-         
-         }
-
+   
 
 
         }
