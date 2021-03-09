@@ -1,5 +1,5 @@
-export const wall = (target) =>{
-    const html= `
+export const wall = (target) => {
+    const html = `
 <h1>POSTS</h1>
 
 <div class="post-card">
@@ -17,26 +17,31 @@ placeholder="Escribe un post :D"></textarea>
 `
 
 
-target.innerHTML = html
+    target.innerHTML = html
 
-const db = firebase.firestore();
-const btnpost=document.getElementById("btnpost");
-btnpost.addEventListener("click", async (e) =>{
- 
+    const db = firebase.firestore();
+    function savePost(){
+        const title = document.getElementById("post-title").value;
+        const posted = document.getElementById("post-description").value;
+        db.collection("posts").add({
+            title: title,
+            posted: posted,
+        })
+            .then(function (docRef) {
+                console.log(docRef.id);
+
+            })
+            .catch(function(error){
+                console.log(error);
+            })
+        }
+
+
+const btnpost = document.getElementById("btnpost");
+btnpost.addEventListener("click", e=>{
 e.preventDefault();
-
-const title = document.getElementById("post-title").value;
-const posted = document.getElementById("post-description").value;
-const response = await db.collection("posts").doc().set({
-    title: title,
-    posted: posted, 
-}) 
-console.log(response)
-
-
-console.log(title, posted)
-});
-
+savePost();
+})
 }
 
 
