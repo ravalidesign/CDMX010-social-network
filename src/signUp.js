@@ -14,9 +14,9 @@ import { createUser } from "./lib/aut.js";
 <p id="pRegistro">ó registrate con<p>
 
 <div class="socialIcons">
-<button class="btn-r" id="facebook-btn"><img src="../Assets/facebook.png.png"></button>
-<button class="btn-r" id="google-btn"><img src="../Assets/google.png.png"></button>
-<button class="btn-r" id="Twitter-btn"><img src="../Assets/twittericon.png.png"></button>
+<button class="socialIcons id="facebookBtn"><img src="../Assets/iconoFB.png"></button>
+<button class="socialIcons id="googleBtn"><img src="../Assets/iconoGM.png"></button>
+<button class="socialIcons  id="TwitterBtn"><img src="../Assets/iconoTR.png"></button>
 </div>
 <p id="volverLogin">¿Ya tengo una cuenta?<p>
 </section>
