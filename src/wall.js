@@ -29,6 +29,12 @@ placeholder="Escribe un post :D"></textarea>
 
   // función cerrar sesión//
 
+  const btnEnd = document.getElementById("btnEnd");
+  btnEnd.addEventListener('click', (e) => {
+    e.preventDefault();
+    endSesion();
+  });
+
 
   const db = firebase.firestore();
 
