@@ -2,14 +2,14 @@ import {onNavigate} from "./router.js"
 import {iniciarSesion} from "./lib/aut.js"
 export const login = (target) =>{
     const html= `
-<h1>I am login Page</h1>
+<h1>Iniciar sesión</h1>
 
-
+<section class = "formLogIn" >
 <input class="" type="text" name="nombre" id="emaillogin" placeholder="Ingrese Correo">
 <input class="" type="password" name="nombre" id="passwordlogin" placeholder="Ingrese Contraseña">
 <button class=" " type="button" id ="entrar"> Iniciar Sesión</button>
 
-
+</section>
 `
 target.innerHTML = html
 

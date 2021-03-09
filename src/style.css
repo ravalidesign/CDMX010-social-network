@@ -92,6 +92,20 @@ img{
    
 }
 
+.formLogIn {
+    width: 300px;
+    height: 360px;
+    background:whitesmoke;
+    padding: 40px 70px 40px 75px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 4px;
+    color: white;
+    border-color:#020102;
+    box-shadow: 30px 25px 70px -50px rgb(46, 43, 43);
+}
+}
+
 #btnmenu {
     display: none;
 }

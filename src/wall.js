@@ -1,6 +1,6 @@
 export const wall = (target) => {
     const html = `
-<h1>POSTS</h1>
+<h1>Soy tu muro</h1>
 
 <div class="post-card">
 <form id="task-form">
@@ -12,7 +12,7 @@ placeholder="titulo de tu post">
 <textarea id="post-description" row="10" class="form-control"
 placeholder="Escribe un post :D"></textarea>
 </div>
-<button class="btnpost" id="btnpost"> Comparte! </button>
+<button class="btnpost" id="btnpost"> ¡Comparte! </button>
 </form>
 `
 
