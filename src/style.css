@@ -170,19 +170,6 @@ header label:hover{
 
     border-right: 1px solid #fff;
 }
-<<<<<<< HEAD
-
-=======
-.menu li:hover{
-    background: rgba(0, 0, 0, 0.3);
-}
-.menu li a {
-    display:block;
-    padding: 15px 20px;
-    color:#fff;
-    text-decoration: none;
-}
->>>>>>> 7f3ed8e0e40d23e75c62365c4d0573fcbee9e47a
 
 @media(max-width:500px){
     header label{
@@ -190,7 +177,6 @@ header label:hover{
     }
     .menu{
         position: absolute;
-<<<<<<< HEAD
        background:#B82787;
        margin-right: -300px;
        
@@ -199,40 +185,3 @@ header label:hover{
 
 
         }
-=======
-        background: #B82787;
-        width:50%;
-
-     }
-    .menu ul {
-        flex-direction: column;
-        margin-left:5%;
-
-    }
-    .menu li{
-        border-top:1px solid #fff;
-    }
-    #btnmenu:checked ~ .menu {
-        margin:0;
-       }
-      
-}
-/* Aqui empiezan los post  */
-.postContainer{
-    background-color:indigo;
-    display: flex;
-    flex-direction: column;
-    
-}
-#post-title{
-background-color: grey;
-margin-bottom: 10px;
-}
-#post-description{
-    background-color: grey;
-    resize: none;
-    }
-.btnpost{
-    background-color: lightblue;
-}
->>>>>>> 7f3ed8e0e40d23e75c62365c4d0573fcbee9e47a
