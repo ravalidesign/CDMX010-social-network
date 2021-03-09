@@ -1,7 +1,7 @@
-import { onNavigate } from './router.js'
+import { onNavigate } from './router.js';
 
 export const home = (target) => {
-    const html = `
+  const html = `
     <header>
 
         <input type="checkbox" id="btnmenu">
@@ -10,7 +10,6 @@ export const home = (target) => {
         <nav class="menu">
         <ul>
         <li><a id="mainMenu" href="#">Home</a> </li>
-        <li><a id="about" href="#">Acerca de</a> </li>
         <li><a id="login" href="#">Iniciar sesion</a></li>
         <li><a id="signUp" href="#">Registro</a></li>
         <li><a id="contact" href="#">Contacto</a> </li>
@@ -19,30 +18,23 @@ export const home = (target) => {
     
     </header>
    
-    `
-    /*"Acerca de" será pantalla de publicacion*/
-    target.innerHTML = html
+    `;
+  /* "Acerca de" será pantalla de publicacion */
+  target.innerHTML = html;
 
-    document.getElementById('login').addEventListener('click', (e) => {
-        e.preventDefault()
-        onNavigate('/login')
-    })
+  document.getElementById('login').addEventListener('click', (e) => {
+    e.preventDefault();
+    onNavigate('/login');
+  });
 
-    document.getElementById('contact').addEventListener('click', (e) => {
-        e.preventDefault()
-        onNavigate('/contact')
-    })
+  document.getElementById('contact').addEventListener('click', (e) => {
+    e.preventDefault();
+    onNavigate('/contact');
+  });
 
-    document.getElementById('signUp').addEventListener('click', (e) => {
-        e.preventDefault()
-        onNavigate('/signUp')
-    })
-
-    /*document.getElementById('mainMenu').addEventListener('click', (e) => {
-            e.preventDefault()
-            onNavigate('/')
-        })*/
-
-}
+  document.getElementById('signUp').addEventListener('click', (e) => {
+    e.preventDefault();
+    onNavigate('/signUp');
+  });
+};
 export default home;
-

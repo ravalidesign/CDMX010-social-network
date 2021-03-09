@@ -1,4 +1,4 @@
-import { endSesion } from "./lib/aut.js"
+import { endSesion } from './lib/aut.js';
 
 export const wall = (target) => {
   const html = `
@@ -26,15 +26,13 @@ placeholder="Escribe un post :D"></textarea>
 
   target.innerHTML = html;
 
-
   // función cerrar sesión//
 
-  const btnEnd = document.getElementById("btnEnd");
+  const btnEnd = document.getElementById('btnEnd');
   btnEnd.addEventListener('click', (e) => {
     e.preventDefault();
     endSesion();
   });
-
 
   const db = firebase.firestore();
 

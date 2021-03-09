@@ -1,8 +1,8 @@
+import { createUser, authGoogle } from './lib/aut.js';
+import {onNavigate} from './router.js';
 
-import { createUser } from "./lib/aut.js";
-
- export const sign = (target) =>{
-    const html= `
+export const sign = (target) => {
+  const html = `
 <h1 id="title">¡A Pueblear!</h1>
 <section class="form-register">
 <h4> Regístrate </h4>
@@ -20,19 +20,20 @@ import { createUser } from "./lib/aut.js";
 </div>
 <p id="volverLogin">¿Ya tengo una cuenta?<p>
 </section>
-`
-target.innerHTML = html
+`;
+  target.innerHTML = html;
 
+  const btnRegistro = document.getElementById('register');
 
-const btnRegistro=document.getElementById("register");
-
-btnRegistro.addEventListener("click" ,(e) => {
-    const email=document.getElementById("email").value;
-    const password=document.getElementById("password").value;
-    createUser(email, password)
-    console.log(email)
-
-})
-}
+  btnRegistro.addEventListener('click', (e) => {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    createUser(email, password);
+  });
+  const btnGoogle = document.getElementById('google-btn');
+  btnGoogle.addEventListener('click', (e) => {
+    authGoogle();
+    onNavigate('/wall');
+  });
+};
 export default sign;
-
