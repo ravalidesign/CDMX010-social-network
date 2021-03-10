@@ -34,23 +34,10 @@ btnRegistro.addEventListener("click" ,(e) => {
     console.log(email)
 
 })
-function validarEmail(valor) {
-    
-    if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(valor)){
-     alert("La dirección de email " + valor + " es correcta!.");
-    } else {
-     alert("Escribe bien, bobo!.");
-    }
-  }
-
-  email.addEventListener('event', function (){
-     const email=document.getElementById("email").value;
-
-    validarEmail(email);
-    
-  
-
-})  
+if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(valor)){
+  alert("La dirección de email " + valor + " es correcta!.");
+ } else {alert("Escribe bien tu correo, por favor!.");
+ 
 
 
 
