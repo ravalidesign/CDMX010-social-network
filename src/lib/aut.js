@@ -42,8 +42,7 @@ export function endSesion() {
 export function authGoogle() {
   const providerGoogle = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(providerGoogle).then((res) => {
-    
-  }).catch((err) => {
+}).catch((err) => {
 
   });
 }
