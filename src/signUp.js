@@ -26,12 +26,12 @@ export const sign = (target) => {
 target.innerHTML = html;
 
 
-if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(valor)){
-  alert("La dirección de email " + valor + " es correcta!.");
-   }else {
-     alert("Escribe bien tu correo, por favor!.");
+// if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(valor)){
+//   alert("La dirección de email " + valor + " es correcta!.");
+//    }else {
+//      alert("Escribe bien tu correo, por favor!.");
 
-}
+// }
 //Función que revisa si el correo está bien escrito//
   const btnRegistro = document.getElementById('register');
 
