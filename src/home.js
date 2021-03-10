@@ -1,10 +1,13 @@
-import { onNavigate } from './router.js'
+import { onNavigate } from './router.js';
 
 export const home = (target) => {
-    const html = `
+  const html = `
     <header>
-<nav class= "mainmenu" id= "topbar">
-        <label for ="btnmenu"><img src="../assets/burgerbutton.png"></label>
+
+        <input type="checkbox" id="btnmenu">
+        <label for ="btnmenu"><img src="../assets/burger.png"></label>
+        
+        <nav class="menu">
         <ul>
        
         
@@ -51,4 +54,3 @@ export const home = (target) => {
 
 }
 export default home;
-
