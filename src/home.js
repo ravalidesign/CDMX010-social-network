@@ -4,17 +4,17 @@ export const home = (target) => {
   const html = `
     <header>
 
-        <input type="checkbox" id="btnmenu">
-        <label for ="btnmenu"><img src="../assets/burger.png"></label>
-        
-        <nav class="menu">
-        <ul>
-        <li><a id="mainMenu" href="#">Home</a> </li>
-        <li><a id="login" href="#">Iniciar sesion</a></li>
-        <li><a id="signUp" href="#">Registro</a></li>
-        <li><a id="contact" href="#">Contacto</a> </li>
-        </ul>
-        </nav>
+    <input type="checkbox" id="btnmenu">
+    <label for ="btnmenu"><img src="../assets/burger.png"></label>
+    <nav class="menu">
+    <ul>
+     <li><a id="contact" href="#">Creadoras :3</a> </li>
+    </ul>
+  </nav>
+<h1 class = "rsTitle"> Red Social <h1>
+<p class="rsDescription"> Ahora tendrás a quién preguntarle recomendaciones para tus aventuras, esta red social será tu herramienta  </p>
+<button type= "button" class= "signUpButton" id= "signUpButton" href="#"> Regístrate </button>
+<button type= "button" class= "logInButton" id= "logInButton" href="#"> Inicia sesión </button>
     
     </header>
    
@@ -22,7 +22,7 @@ export const home = (target) => {
   /* "Acerca de" será pantalla de publicacion */
   target.innerHTML = html;
 
-  document.getElementById('login').addEventListener('click', (e) => {
+  document.getElementById('logInButton').addEventListener('click', (e) => {
     e.preventDefault();
     onNavigate('/login');
   });
@@ -32,7 +32,7 @@ export const home = (target) => {
     onNavigate('/contact');
   });
 
-  document.getElementById('signUp').addEventListener('click', (e) => {
+  document.getElementById('signUpButton').addEventListener('click', (e) => {
     e.preventDefault();
     onNavigate('/signUp');
   });
