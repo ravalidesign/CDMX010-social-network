@@ -1,4 +1,10 @@
+<<<<<<< HEAD
+export const wall = (target) => {
+    const html = `
+<h1>Soy tu muro</h1>
+=======
 import { endSesion } from './lib/aut.js';
+>>>>>>> 70ba71fbca79aa8888a715b93e3fdda3486de45b
 
 export const wall = (target) => {
   const html = `
@@ -15,7 +21,7 @@ placeholder="titulo de tu post">
 <textarea id="post-description" row="10" class="form-control"
 placeholder="Escribe un post :D"></textarea>
 </div>
-<button class="btnpost" id="btnpost"> Comparte! </button>
+<button class="btnpost" id="btnpost"> ¡Comparte! </button>
 </form>
 </div>
 
@@ -54,6 +60,34 @@ placeholder="Escribe un post :D"></textarea>
       });
   }
 
+<<<<<<< HEAD
+    target.innerHTML = html
+
+    const db = firebase.firestore();
+    function savePost(){
+        const title = document.getElementById("post-title").value;
+        const posted = document.getElementById("post-description").value;
+        db.collection("posts").add({
+            title: title,
+            posted: posted,
+        })
+            .then(function (docRef) {
+                console.log(docRef.id);
+
+            })
+            .catch(function(error){
+                console.log(error);
+            })
+        }
+
+
+const btnpost = document.getElementById("btnpost");
+btnpost.addEventListener("click", e=>{
+e.preventDefault();
+savePost();
+})
+}
+=======
   const btnpost = document.getElementById('btnpost');
   btnpost.addEventListener('click', (e) => {
     e.preventDefault();
@@ -91,6 +125,7 @@ export default wall;
 //     posted: posted,
 // })
 // console.log(response)
+>>>>>>> 70ba71fbca79aa8888a715b93e3fdda3486de45b
 
 // console.log(title, posted)
 // });

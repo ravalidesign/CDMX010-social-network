@@ -48,7 +48,11 @@ function validarEmail(valor) {
     if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(valor)){
      alert("La dirección de email " + valor + " es correcta!.");
     } else {
+<<<<<<< HEAD
+     alert("Escribe bien, bobo!.");
+=======
      alert("Escribe bien tu correo, por favor!.");
+>>>>>>> 70ba71fbca79aa8888a715b93e3fdda3486de45b
     }
   }
 
@@ -66,6 +70,15 @@ function validarEmail(valor) {
 
 }
 //Función que revisa si el correo está bien escrito//
+<<<<<<< HEAD
+
+
+
+
+
+export default sign;
+=======
+>>>>>>> 70ba71fbca79aa8888a715b93e3fdda3486de45b
 
 
 
