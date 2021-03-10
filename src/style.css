@@ -83,16 +83,30 @@ font-family: 'Lato', sans-serif;
     border-color: transparent;
     background: transparent;
 }
- 
-.socialIcons{
-   max-height: 25px;
-   max-width: 25px;
+ /*codigo de los iconos de registro*/
+/*.socialIcons{
+   height: 25px;
+   width: 25px;
    border-color: transparent;
    margin-right: -0px;
    margin-bottom: 8px;
-   background-color: transparent;}
    
-
+}*/
+   
+/*#facebookBtn{
+    height: 25px;
+    width: 25px;
+    
+}
+#googleBtn{
+    height: 25px;
+    width: 25px;
+}
+#TwitterBtn{
+    height: 25px;
+    width: 25px;
+}*/
+/*aqui termina codigo de los iconos de registro*/
 .imgp{
     max-width: 500px;
     margin: 0 auto;
