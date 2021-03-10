@@ -2,6 +2,7 @@ import {onNavigate} from "./router.js"
 import {iniciarSesion} from "./lib/aut.js"
 export const login = (target) =>{
     const html= `
+
 <h1>Iniciar sesión</h1>
 
 <section class = "formLogIn" >
