@@ -8,6 +8,7 @@ export const sign = (target) => {
 <h4> Regístrate </h4>
 <input class="controls" type="text" name="nombre" id="name" placeholder="Ingrese su Nombre Completo">
 <input class="controls" type="text" name="nombre" id="email" placeholder="Ingrese su Correo">
+<span id ='veryfyMail'></span>
 <input class="controls" type="date" name="date of birth" id="date" placeholder="Ingrese su fecha de nacimiento">
 <input class="controls" type="password" name="nombre" id="password" placeholder="Escriba una Contraseña">
 <button class=" buttonSignUp" type="button" id ="register"> Ingresar</button>
@@ -20,9 +21,18 @@ export const sign = (target) => {
 </div>
 <p id="volverLogin">¿Ya tengo una cuenta?<p>
 </section>
-`;
-  target.innerHTML = html;
 
+`
+target.innerHTML = html;
+
+
+// if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(valor)){
+//   alert("La dirección de email " + valor + " es correcta!.");
+//    }else {
+//      alert("Escribe bien tu correo, por favor!.");
+
+// }
+//Función que revisa si el correo está bien escrito//
   const btnRegistro = document.getElementById('register');
 
   btnRegistro.addEventListener('click', (e) => {
@@ -36,4 +46,5 @@ export const sign = (target) => {
     onNavigate('/wall');
   });
 };
+
 export default sign;

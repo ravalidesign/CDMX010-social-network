@@ -15,7 +15,7 @@ placeholder="titulo de tu post">
 <textarea id="post-description" row="10" class="form-control"
 placeholder="Escribe un post :D"></textarea>
 </div>
-<button class="btnpost" id="btnpost"> Comparte! </button>
+<button class="btnpost" id="btnpost"> ¡Comparte! </button>
 </form>
 </div>
 
@@ -91,7 +91,6 @@ export default wall;
 //     posted: posted,
 // })
 // console.log(response)
-
 // console.log(title, posted)
 // });
 
