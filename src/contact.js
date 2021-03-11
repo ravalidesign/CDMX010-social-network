@@ -1,10 +1,11 @@
 
 export const contact = (target) =>{
     const html= `
-<h1>I am contact Page</h1>
+<h1> Lili, Kath, Anahí 
+</h1>
 
 `
-target.innerHTML = html
+target.innerHTML = htmla
 
 }
 

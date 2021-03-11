@@ -9,13 +9,16 @@ export const wall = (target) => {
 <form id="task-form">
 <input autofocus type="text" id="post-title" class="form-control"
 placeholder="titulo de tu post">
-
 </div> 
+
 <div class= "post">
 <textarea id="post-description" row="10" class="form-control"
 placeholder="Escribe un post :D"></textarea>
 </div>
+
 <button class="btnpost" id="btnpost"> Comparte! </button>
+<button class="btnDeletePost" id="btnDeletePost"> Eliminar </button>
+<button class="btnEditPost" id="btnEditPost"> Editar </button>
 </form>
 </div>
 
@@ -76,6 +79,41 @@ placeholder="Escribe un post :D"></textarea>
    });
  });
 };
+
+//funcion para borrar post//
+const btnDeletePost = document.getElementById('btnDeletePost');
+btnDeletePost.addEventListener('click', (e) => {
+  
+   deletePost('${doc.id}');
+ });
+
+const deletePost = (id) => {
+
+  db.collection("post").doc("id").delete().then(() => {
+    console.log("Document successfully deleted!");
+  }).catch((error) => {
+    console.error("Error removing document: ", error);
+  });
+
+}
+
+//fin de borrar post ^//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//funcion para editar post//
 
 export default wall;
 
