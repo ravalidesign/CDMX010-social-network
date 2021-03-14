@@ -199,3 +199,53 @@ header label:hover{
 
 
         }
+/*aqui comienza estilos de post*/
+.headpost{
+    color: white;
+    text-align: center;
+    background-color: #B82787;
+}
+.imghead{
+    max-width: 60px;
+    
+}
+.postContainer{
+background-color:transparent;
+    margin-bottom: 5px;
+    text-align: center;
+    max-height: max-content;
+    max-width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px 50px 50px 50px;
+    border: 3px solid #B82787;
+}
+/*boton de cerrar sesion*/
+#btnEnd{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.postContainer2{
+    background-color:whitesmoke;
+    margin-bottom: 5px;
+    text-align: center;
+    max-height: max-content;
+    max-width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px 50px 50px 50px;
+    border: 3px solid #B82787;
+    
+}
+.btnEditPost{
+    border: 1px solid #B82787;
+    color: black;
+    background-color: transparent;
+}
+.btnDeletePost{
+    border: 1px solid #B82787;
+    color: black;
+    background-color: transparent;
+}
+/*aqui termina estilos de post*/
