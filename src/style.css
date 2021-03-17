@@ -168,18 +168,6 @@ header label:hover{
     background: rgba(0,0, 0, 0.3);
 }
 
-.menu ul{
-    margin:0;
-    list-style: none;
-    padding: 0;
-    display:flex;
-    justify-content: flex-end;
-}
-
-.menu li{
-
-    border-right: 1px solid #fff;
-}
 
 @media(max-width:500px){
     header label{

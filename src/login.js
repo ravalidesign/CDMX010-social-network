@@ -4,13 +4,14 @@ export const login = (target) =>{
     const html= `
 
 <h1>Iniciar sesión</h1>
-
+<form action = '' class = 'formLogIn' id = 'formLogIn'>
 <section class = "formLogIn" >
 <input class="controls" type="text" name="nombre" id="emaillogin" placeholder="Ingrese Correo">
 <input class="controls" type="password" name="nombre" id="passwordlogin" placeholder="Ingrese Contraseña">
 <button class= "btnLogIn" type="button" id ="entrar"> Iniciar Sesión</button>
 
 </section>
+
 `
 target.innerHTML = html
 
@@ -26,7 +27,27 @@ document.getElementById("entrar").addEventListener('click', (e) => {
     e.preventDefault()
     onNavigate('/wall')
 })
+// document.getElementById("entrar").addEventListener('click', (e) => {
+//     e.preventDefault()
+//     onNavigate('/wall')
+// });
+const formValidation= () => {
+    
 }
+
+const inputs = document.querySelectorAll('#formLogIn input');
+inputs.forEach((input)=> {
+    input.addEventListener('keyup', () =>{
+  
+    });
+});
+
+
+}
+
+//Funcion que revisa que el usuario haya ingresado datos para continuar a la siguiente pagina
+
+
 
 
 export default login;

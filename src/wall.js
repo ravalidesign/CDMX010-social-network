@@ -73,7 +73,7 @@ placeholder="Escribe un post"></textarea>
 
   // leyendo datos//
   const titleDos = document.getElementById('title');
-  db.collection('posts').get().then((querySnapshot) => {
+  db.collection('posts').onSnapshot((querySnapshot) => {
     titleDos.innerHTML = '';
     querySnapshot.forEach((doc) => {
       const post = doc.data();
