@@ -110,7 +110,7 @@ header label {
 
 /* Formulario de Iniciar sesión */
 
-.formLogin{
+.formLogIn{
 width: 300px;
 background:whitesmoke;
 padding: 40px 70px 40px 75px;
@@ -154,66 +154,7 @@ header label:hover{
     background: rgba(0,0, 0, 0.3);
 }
 
-.menu ul{
-    margin:0;
-    list-style: none;
-    padding: 0;
-    display:flex;
-    justify-content: flex-end;
-}
 
-.menu li{
 
-    border-right: 1px solid #fff;
-}
-.menu li:hover{
-    background: rgba(0, 0, 0, 0.3);
-}
-.menu li a {
-    display:block;
-    padding: 15px 20px;
-    color:#fff;
-    text-decoration: none;
-}
 
-@media(max-width:500px){
-    header label{
-        display: block;
-    }
-    .menu{
-        position: absolute;
-        background: #B82787;
-        width:50%;
-
-     }
-    .menu ul {
-        flex-direction: column;
-        margin-left:5%;
-
-    }
-    .menu li{
-        border-top:1px solid #fff;
-    }
-    #btnmenu:checked ~ .menu {
-        margin:0;
-       }
-      
-}
 /* Aqui empiezan los post  */
-.postContainer{
-    background-color:indigo;
-    display: flex;
-    flex-direction: column;
-    
-}
-#post-title{
-background-color: grey;
-margin-bottom: 10px;
-}
-#post-description{
-    background-color: grey;
-    resize: none;
-    }
-.btnpost{
-    background-color: lightblue;
-}

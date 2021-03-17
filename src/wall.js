@@ -62,7 +62,7 @@ placeholder="Escribe un post :D"></textarea>
 
   // leyendo datos//
   const titleDos = document.getElementById('title');
-  db.collection('posts').get().then((querySnapshot) => {
+  db.collection('posts').onSnapshot((querySnapshot) => {
     titleDos.innerHTML = '';
     querySnapshot.forEach((doc) => {
       console.log(`${doc.id} => ${doc.data()}`);
@@ -71,9 +71,28 @@ placeholder="Escribe un post :D"></textarea>
         <h4>${doc.data().title}</h4>
         <h2>publicación</h2>
         <h4>${doc.data().posted}</h4>
+        <button id="btnDelete"> Borrar </button>
         `;
     });
   });
+
+ function deletePost(){
+  db.collection("post").doc(id).delete().then(() => {
+    console.log("Document successfully deleted!");
+  }).catch((error) => {
+    console.error("Error removing document: ", error);
+  });
+ }
+ const btnDelete = document.getElementById ('btnDelete');
+ btnDelete.addEventListener('click', (e) => {
+  e.preventDefault();
+
+   deletePost('${doc.id}');
+ })
+
+
+
+
 };
 
 export default wall;
