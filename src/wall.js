@@ -24,7 +24,7 @@ placeholder="titulo de tu post">
 placeholder="Escribe un post"></textarea>
 </div>
 
-<button class="btnpost" id="btnpost"> Comparte! </button>
+<button class="btnpost" id="btnpost" > Comparte! </button>
 
 </form>
 </div>
@@ -76,124 +76,65 @@ placeholder="Escribe un post"></textarea>
   db.collection('posts').get().then((querySnapshot) => {
     titleDos.innerHTML = '';
     querySnapshot.forEach((doc) => {
-      console.log(`${doc.id} => ${doc.data()}`);
+      const post = doc.data();
+      console.log(post);
+
+      post.id = doc.id
+      console.log(post.id);
+      //(`${doc.id} => ${doc.data()}`);
       titleDos.innerHTML += `
      <div class="postContainer2"
    
        <h4></h4>
 
-       <h4>${doc.data().title}</h4>
+       <h4>${post.title}</h4>
 
        <h1></h1>
 
-       <h4>${doc.data().posted}</h4>
+       <h4>${post.posted}</h4>
        
-       <button class="btnEditPost" id="btnEditPost"> Editar </button>
-       <button class="btnDeletePost" id="btnDeletePost"> Eliminar </button>
+       <button class="btnDelete" data-id="${post.id}">Eliminar</button>
        </div>
        `;
+       function deletePost(id) {
 
+        return db.collection('posts').doc(id).delete();
+      }
+
+       const deleteB = document.querySelectorAll('.btnDelete');
+       deleteB.forEach(btn => {
+         btn.addEventListener('click', async (e) => {
+           const id = e.target.dataset.id;
+           console.log(e.target.dataset);
+            try { await deletePost(id);
+             console.log("se elimino correctamente");
+           }
+           catch (error) {
+             console.error('No estoy borrando', error);
+     
+           }
+          
+         }) 
+         
+       })
     });
   });
 
 
   //funcion para borrar post//
-  /*
-  function deletePost (id){
 
-    const erasePost = forEach(id){
-    db.collection("post").doc("id").delete().then(() => {
-      console.log("Document successfully deleted!");
-    }).catch((error) => {
-      console.error("Error removing document: ", error);
-    });
+  
+    /*.then(() => {
+
+   
+   console.log("Document successfully deleted!");
+ }).catch((error) => {
+   console.error("Error removing document: ", error);
+ });*/
 
 
-  }
-  }
-  const btnDElete = document.getElementById('btnDElete');
-  btnDElete.addEventListener('click', deletePost => {
- 
-    deletePost('${doc.id}');
-  });
-  */
+  ///}
 
-  //fin de borrar post ^//
-
-  //inicio editar post//
-  /*
- 
-  db.collection("users").doc("id").set({
-    title,
-    posted,
-  })
-    .then(() => {
-      console.log("Document successfully written!");
-    })
-    .catch((error) => {
-      console.error("Error writing document: ", error);
-    });
- 
- 
-  const editPost = (id, post - title, post - description) => { //esta funcion trae elementos de la funcion save//
-  document.getElementById('post-title').value = post - title;
-  document.getElementById('post-description').value = post - description;
-  //var delete = //
- 
-  //esta funcion actualiza la informacion de los elementos editados//
-  boton.onclick = function () { //este boton va a guardar//
- 
-    var post = db.collection("users").doc("id").set({
-      title,
-      posted,
-    })
-    var titleNew = document.getElementById('post-title').value;
-    var descriptionNew = document.getElementById('post-description').value;
- 
-    return post.update({
-      title,
-      posted,
-    })
-  }
-    .then(() => {
-      console.log("Document successfully written!");
-    })
-    .catch((error) => {
-      console.error("Error writing document: ", error);
-    });
  
 }
-const btnEditPost = document.getElementById('btnEditPost');
-btnEditPost.addEventListener('click', (e) => {
- 
-  editPost('${doc.id}');
-});
-};*/
-
-};
-
-  //funcion para editar post//
-
-  export default wall;
-
-  // const db = firebase.firestore();
-  // const btnpost=document.getElementById("btnpost");
-  // btnpost.addEventListener("click", async (e) =>{
-
-  // e.preventDefault();
-
-  // const title = document.getElementById("post-title").value;
-  // const posted = document.getElementById("post-description").value;
-  // const response = await db.collection("posts").doc().set({
-  //     title: title,
-  //     posted: posted,
-  // })
-  // console.log(response)
-
-  // console.log(title, posted)
-  // });
-
-  // }
-
-  // console.log(title, posted)
-
+export default wall;

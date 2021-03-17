@@ -266,7 +266,7 @@ font-size: 5px;
 
 /*boton de cerrar sesion*/
 .btnEnd {
-    background-color:transparent;
+    background-color:black;
     width: 2em;
     height: 2em;
     border-color: transparent;
@@ -301,7 +301,7 @@ font-size: 5px;
     color: black;
     background-color: transparent;
 }
-.btnDeletePost{
+.btnDelete{
     border: 1px solid #B82787;
     color: black;
     background-color: transparent;

@@ -1,6 +1,7 @@
 export function iniciarSesion(email, password) {
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then((res) => {
+      
       console.log(res);
     }).catch((error) => {
       console.log(error);

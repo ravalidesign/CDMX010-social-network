@@ -20,6 +20,7 @@ target.innerHTML = html
     const email=document.getElementById("emaillogin").value;
     const password=document.getElementById("passwordlogin").value;
     iniciarSesion(email,password)
+    
 })
 document.getElementById("entrar").addEventListener('click', (e) => {
     e.preventDefault()
