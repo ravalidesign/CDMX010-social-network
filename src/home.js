@@ -1,6 +1,7 @@
 import { onNavigate } from './router.js';
 
 export const home = (target) => {
+    // const rootDiv =document.getElementById('root');
   const html = `
     <header>
 
@@ -17,8 +18,7 @@ export const home = (target) => {
         
     </nav>
     <h1 class = "rsTitle"> Red Social <h1>
-    <p class="rsDesc"> Ahora tendrás a quién preguntarleeee qué camión tomar para ir al Nevado de Toluca y no perderte en el intento
-    ;) ;) ¿Comiste ricooo y quieres recomendarle a todos? Aquí sí es el espacio. Date vuelo con tus recomendaciones </p>
+    <p class="rsDesc">  a todos? Recomendaciones viajes :) </p>
 
 
     <button type= "button" class= "signUpButton" id= "signUpButton" href="#"> Regístrate </button>
