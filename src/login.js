@@ -8,7 +8,7 @@ export const login = (target) =>{
 <section class = "formLogIn" >
 <input class="controls" type="text" name="nombre" id="emaillogin" placeholder="Ingrese Correo">
 <input class="controls" type="password" name="nombre" id="passwordlogin" placeholder="Ingrese Contraseña">
-<button class=" " type="button" id ="entrar"> Iniciar Sesión</button>
+<button class= "btnLogIn" type="button" id ="entrar"> Iniciar Sesión</button>
 
 </section>
 
@@ -20,8 +20,12 @@ target.innerHTML = html
     btnentrar.addEventListener("click",(e) =>{
     const email=document.getElementById("emaillogin").value;
     const password=document.getElementById("passwordlogin").value;
-    iniciarSesion(email, password, onNavigate);
+    iniciarSesion(email,password)
     
+})
+document.getElementById("entrar").addEventListener('click', (e) => {
+    e.preventDefault()
+    onNavigate('/wall')
 })
 // document.getElementById("entrar").addEventListener('click', (e) => {
 //     e.preventDefault()

@@ -14,10 +14,10 @@ export const sign = (target) => {
 <button class=" buttonSignUp" type="button" id ="register"> Ingresar</button>
 <p id="pRegistro">ó registrate con<p>
 
-<div id="socialIcons">
-<button class="btn-r" id="facebook-btn"><img src="../Assets/facebook.png.png"></button>
-<button class="btn-r" id="google-btn"><img src="../Assets/google.png.png"></button>
-<button class="btn-r" id="Twitter-btn"><img src="../Assets/twittericon.png.png"></button>
+<div class="socialIcons">
+<button  id="facebookBtn"><img src="../Assets/iconoFB.png"></button>
+<button  id="googleBtn"><img src="../Assets/iconoGM.png"></button>
+<button   id="TwitterBtn"><img src="../Assets/iconoTR.png"></button>
 </div>
 <p id="volverLogin">¿Ya tengo una cuenta?<p>
 </section>

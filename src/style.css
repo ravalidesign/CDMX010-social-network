@@ -75,25 +75,39 @@ font-family: 'Lato', sans-serif;
 #socialIcons{
     position:relative;
     background-color:transparent;
-    width: 160px;
-    height: 40px;
+    width: 25px;
+    height: 25px;
     margin-left: 10px;
 }
 .btn-r{
     border-color: transparent;
     background: transparent;
 }
- 
-img{
-   max-height: 25px;
-   max-width: 25px;
+ /*codigo de los iconos de registro*/
+ /*
+.socialIcons{
+   height: 25px;
+   width: 25px;
    border-color: transparent;
    margin-right: -0px;
    margin-bottom: 8px;
-   background-color: transparent;
    
 }
-
+   
+#facebookBtn{
+    height: 25px;
+    width: 25px;
+    
+}
+#googleBtn{
+    height: 25px;
+    width: 25px;
+}
+#TwitterBtn{
+    height: 25px;
+    width: 25px;
+}*/
+/*aqui termina codigo de los iconos de registro*/
 
 #btnmenu {
     display: none;
@@ -122,7 +136,7 @@ border-color:#020102;
 box-shadow: 30px 25px 70px -50px rgb(46, 43, 43);
 }
 
-.buttonLogin{
+.btnLogIn{
     background: #B82787;
     font-size: 10px;
     color: white;
@@ -155,6 +169,129 @@ header label:hover{
 }
 
 
+@media(max-width:500px){
+    header label{
+        display: block;
+    }
+    .menu{
+        position: absolute;
+       background:#B82787;
+       margin-right: -300px;
+       
+        }
 
+        }
+/*aqui comienza estilos de post*/
+.headpost{
+    color: white;
+    text-align: center;
+    background-color: #B82787;
+}
+.imghead{
+    max-width: 60px;
+    
+}
+/*contenedor editar publicacion*/
+.postContainer{
+    background-color:transparent;
+    margin-bottom: 5px;
+    text-align: center;
+    max-height: max-content;
+    max-width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px 50px 50px 50px;
+    border: 3px solid rgb(17, 186, 192);
+}
+#post-title{
+background-color: transparent;
+border: 1px solid #B82787;
+position: sticky;
+top: -20px; 
+left: 40px;
+outline: none;
+margin-bottom: 40px;
+margin-top: -17px;
+padding: 10px;
+}
+#post-title:hover{
+    background-color: #d831a075;
+    outline: none;
+}
+#post-description{
+  background-color: transparent;
+  border: 1px solid #B82787;
+  position: sticky;
+  top: -20px; 
+  left: 40px;
+  outline: none;
+  margin-bottom: 20px;
+  margin-top: -17px;
+  padding: 30px;
 
-/* Aqui empiezan los post  */
+}
+#btnpost{
+    outline: none;
+    border-color: #B82787;
+    color: white;
+    background-color: mediumvioletred;
+    padding: 10px 15px 10px 15px;
+    border-radius: 3px;
+}
+
+#btnpost:hover{
+    border-color: darkturquoise;
+    outline: none;
+    box-shadow: 0 0 10px teal, 0 0 5px teal, 0 0 30px teal;
+}
+.titu{
+ font-size: 15px;
+
+}
+.postit{
+font-size: 5px;
+}
+
+/*boton de cerrar sesion*/
+.btnEnd {
+    background-color:black;
+    width: 2em;
+    height: 2em;
+    border-color: transparent;
+}
+.btnEnd  img{
+    margin-left: 120px;
+    margin-bottom: 15px;
+    outline: none;
+    width: 2em;
+    height: 2em;
+    position:-webkit-sticky;
+    position: sticky;
+
+    
+   
+}
+
+.postContainer2{
+    background-color:whitesmoke;
+    margin-bottom: 5px;
+    text-align: center;
+    max-height: max-content;
+    max-width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px 50px 50px 50px;
+    border: 3px solid #B82787;
+    
+}
+.btnEditPost{
+    border: 1px solid #B82787;
+    color: black;
+    background-color: transparent;
+}
+.btnDelete{
+    border: 1px solid #B82787;
+    color: black;
+    background-color: transparent;
+}
+/*aqui termina estilos de post*/

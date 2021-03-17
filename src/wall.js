@@ -1,21 +1,31 @@
-import { endSesion } from './lib/aut.js';
+import { endSesion } from "./lib/aut.js"
 
 export const wall = (target) => {
   const html = `
-<h1>POSTS</h1>
-<button class="end" id="btnEnd">Cerrar sesión</button>
+<head>
+<div class= "headpost">
+<h1></h1>
+<img class="imghead" src="../Assets/logo.png">
+
+<button class="btnEnd" id="btnEnd"><img src="../Assets/iconologout.png"></button>
+
+</div>
+</head>
+
 <div class="postContainer">
 <div class="post-card">
 <form id="task-form">
 <input autofocus type="text" id="post-title" class="form-control"
 placeholder="titulo de tu post">
-
 </div> 
+
 <div class= "post">
 <textarea id="post-description" row="10" class="form-control"
-placeholder="Escribe un post :D"></textarea>
+placeholder="Escribe un post"></textarea>
 </div>
-<button class="btnpost" id="btnpost"> ¡Comparte! </button>
+
+<button class="btnpost" id="btnpost" > Comparte! </button>
+
 </form>
 </div>
 
@@ -28,11 +38,12 @@ placeholder="Escribe un post :D"></textarea>
 
   // función cerrar sesión//
 
-  const btnEnd = document.getElementById('btnEnd');
+  const btnEnd = document.getElementById("btnEnd");
   btnEnd.addEventListener('click', (e) => {
     e.preventDefault();
     endSesion();
   });
+
 
   const db = firebase.firestore();
 
@@ -65,52 +76,65 @@ placeholder="Escribe un post :D"></textarea>
   db.collection('posts').onSnapshot((querySnapshot) => {
     titleDos.innerHTML = '';
     querySnapshot.forEach((doc) => {
-      console.log(`${doc.id} => ${doc.data()}`);
+      const post = doc.data();
+      console.log(post);
+
+      post.id = doc.id
+      console.log(post.id);
+      //(`${doc.id} => ${doc.data()}`);
       titleDos.innerHTML += `
-        <h2>Titulo</h2>
-        <h4>${doc.data().title}</h4>
-        <h2>publicación</h2>
-        <h4>${doc.data().posted}</h4>
-        <button id="btnDelete"> Borrar </button>
-        `;
+     <div class="postContainer2"
+   
+       <h4></h4>
+
+       <h4>${post.title}</h4>
+
+       <h1></h1>
+
+       <h4>${post.posted}</h4>
+       
+       <button class="btnDelete" data-id="${post.id}">Eliminar</button>
+       </div>
+       `;
+       function deletePost(id) {
+
+        return db.collection('posts').doc(id).delete();
+      }
+
+       const deleteB = document.querySelectorAll('.btnDelete');
+       deleteB.forEach(btn => {
+         btn.addEventListener('click', async (e) => {
+           const id = e.target.dataset.id;
+           console.log(e.target.dataset);
+            try { await deletePost(id);
+             console.log("se elimino correctamente");
+           }
+           catch (error) {
+             console.error('No estoy borrando', error);
+     
+           }
+          
+         }) 
+         
+       })
     });
   });
 
- function deletePost(){
-  db.collection("post").doc(id).delete().then(() => {
-    console.log("Document successfully deleted!");
-  }).catch((error) => {
-    console.error("Error removing document: ", error);
-  });
- }
- const btnDelete = document.getElementById ('btnDelete');
- btnDelete.addEventListener('click', (e) => {
-  e.preventDefault();
 
-   deletePost('${doc.id}');
- })
+  //funcion para borrar post//
+
+  
+    /*.then(() => {
+
+   
+   console.log("Document successfully deleted!");
+ }).catch((error) => {
+   console.error("Error removing document: ", error);
+ });*/
 
 
+  ///}
 
-
-};
-
+ 
+}
 export default wall;
-
-// const db = firebase.firestore();
-// const btnpost=document.getElementById("btnpost");
-// btnpost.addEventListener("click", async (e) =>{
-
-// e.preventDefault();
-
-// const title = document.getElementById("post-title").value;
-// const posted = document.getElementById("post-description").value;
-// const response = await db.collection("posts").doc().set({
-//     title: title,
-//     posted: posted,
-// })
-// console.log(response)
-// console.log(title, posted)
-// });
-
-// }

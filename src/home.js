@@ -4,15 +4,11 @@ export const home = (target) => {
     // const rootDiv =document.getElementById('root');
   const html = `
     <header>
-
-        <input type="checkbox" id="btnmenu">
-        <label for ="btnmenu"><img src="../assets/burger.png"></label>
-        
-        <nav class="menu">
+    
+<nav class= "mainmenu" id= "topbar">
+        <label for ="btnmenu"><img src="../assets/burgerbutton.png"></label>
         <ul>
 
-       
-        
          <li><a id="contact" href="#">Creadoras :3</a> </li>
         </ul>
         
@@ -25,7 +21,10 @@ export const home = (target) => {
     <button type= "button" class= "logInButton" id= "logInButton" href="#"> Inicia sesión </button>
 
     </header>
-   
+    <body>
+    <div class="imgp" <img src="../Assets/backgroundtwo.jpg" width="100%" >
+    </div>
+    </body>
     `
     
     /*"Acerca de" será pantalla de publicacion*/
