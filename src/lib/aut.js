@@ -1,9 +1,10 @@
-export function iniciarSesion(email, password) {
+export function iniciarSesion(email, password, onNavigate) {
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then((res) => {
+      onNavigate('/wall');
       console.log(res);
     }).catch((error) => {
-      console.log(error);
+      alert('Inicia sesion');
     });
 }
 
@@ -27,7 +28,7 @@ export function createUser(email, password) {
       );
     })
     .catch((error) => {
-      alert('Ocurrio un error');
+      ver('Error ');
     });
 }
 // Cerrar sesión //

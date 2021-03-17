@@ -7,8 +7,8 @@ export const sign = (target) => {
 <section class="form-register">
 <h4> Regístrate </h4>
 <input class="controls" type="text" name="nombre" id="name" placeholder="Ingrese su Nombre Completo">
-<input class="controls" type="text" name="nombre" id="email" placeholder="Ingrese su Correo">
-<span id ='veryfyMail'></span>
+<input class="controls" type="text" name="nombre" id='email' placeholder="Ingrese su Correo">
+<span id ='verifyMail'></span>
 <input class="controls" type="date" name="date of birth" id="date" placeholder="Ingrese su fecha de nacimiento">
 <input class="controls" type="password" name="nombre" id="password" placeholder="Escriba una Contraseña">
 <button class=" buttonSignUp" type="button" id ="register"> Ingresar</button>
@@ -48,3 +48,34 @@ target.innerHTML = html;
 };
 
 export default sign;
+
+
+//Función revisa correo válido
+function validMail (email){
+  var container= document.getElementById()
+  var regExp= /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+  var valid= regExp.test(correo); 
+  if (valid==true){
+    //Si es válido que lo escriba en el span id= verifyMail
+   alert('Correo válido');
+  }
+  else {
+    alert ('Revisa tu correo');
+  }
+
+
+}
+
+
+
+
+//evento de validar correo
+
+// function validation(){
+//   var mail = document.getElementById("email").value;
+//   var alert= document.getElementById('verifyMail');
+//   var pattern= /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+// }
+
+
+

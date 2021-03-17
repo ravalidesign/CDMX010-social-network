@@ -6,10 +6,16 @@
 
 import {routes} from './router.js'
 
-const rootDiv = document.getElementById("root");
+  const rootDiv = document.getElementById('root');
+const homeViewFunction = routes[window.location.pathname];
+homeViewFunction(rootDiv);
 
-document.addEventListener('DOMContentLoaded', () => {
-    const home = routes[window.location.pathname]
-    home(rootDiv)
-})
+// const rootDiv = document.getElementById("root");
+// rootDiv.innerHTML= routes[window.location.pathname]; 
+
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     const home = routes[window.location.pathname]
+//     home(rootDiv)
+// })
 
