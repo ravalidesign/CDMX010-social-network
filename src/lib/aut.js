@@ -4,7 +4,7 @@ export function iniciarSesion(email, password, onNavigate) {
       onNavigate('/wall');
       console.log(res);
     }).catch((error) => {
-      alert('Inicia sesion bobo');
+      alert('Inicia sesion');
     });
 }
 
