@@ -6,9 +6,9 @@ export const login = (target) =>{
 <h1>Iniciar sesión</h1>
 
 <section class = "formLogIn" >
-<input class="" type="text" name="nombre" id="emaillogin" placeholder="Ingrese Correo">
-<input class="" type="password" name="nombre" id="passwordlogin" placeholder="Ingrese Contraseña">
-<button class=" " type="button" id ="entrar"> Iniciar Sesión</button>
+<input class="controls" type="text" name="nombre" id="emaillogin" placeholder="Ingrese Correo">
+<input class="controls" type="password" name="nombre" id="passwordlogin" placeholder="Ingrese Contraseña">
+<button class= "btnLogIn" type="button" id ="entrar"> Iniciar Sesión</button>
 
 </section>
 `

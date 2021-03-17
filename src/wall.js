@@ -96,101 +96,104 @@ placeholder="Escribe un post"></textarea>
     });
   });
 
-  
-    //funcion para borrar post//
-  
-    function deletePost () => (id) {
-  
-      db.collection("post").doc("id").delete().then(() => {
-        console.log("Document successfully deleted!");
-      }).catch((error) => {
-        console.error("Error removing document: ", error);
-      });
-  
-    }
-    const btnDeletePost = document.getElementById('btnDeletePost');
-    btnDeletePost.addEventListener('click', deletePost => {
-  
-      deletePost('${doc.id}');
-    });
-    
 
-    //fin de borrar post ^//
-  
-    //inicio editar post//
-    /*
-  
-    db.collection("users").doc("id").set({
+  //funcion para borrar post//
+  /*
+  function deletePost (id){
+
+    const erasePost = forEach(id){
+    db.collection("post").doc("id").delete().then(() => {
+      console.log("Document successfully deleted!");
+    }).catch((error) => {
+      console.error("Error removing document: ", error);
+    });
+
+
+  }
+  }
+  const btnDElete = document.getElementById('btnDElete');
+  btnDElete.addEventListener('click', deletePost => {
+ 
+    deletePost('${doc.id}');
+  });
+  */
+
+  //fin de borrar post ^//
+
+  //inicio editar post//
+  /*
+ 
+  db.collection("users").doc("id").set({
+    title,
+    posted,
+  })
+    .then(() => {
+      console.log("Document successfully written!");
+    })
+    .catch((error) => {
+      console.error("Error writing document: ", error);
+    });
+ 
+ 
+  const editPost = (id, post - title, post - description) => { //esta funcion trae elementos de la funcion save//
+  document.getElementById('post-title').value = post - title;
+  document.getElementById('post-description').value = post - description;
+  //var delete = //
+ 
+  //esta funcion actualiza la informacion de los elementos editados//
+  boton.onclick = function () { //este boton va a guardar//
+ 
+    var post = db.collection("users").doc("id").set({
       title,
       posted,
     })
-      .then(() => {
-        console.log("Document successfully written!");
-      })
-      .catch((error) => {
-        console.error("Error writing document: ", error);
-      });
-  
-  
-    const editPost = (id, post - title, post - description) => { //esta funcion trae elementos de la funcion save//
-    document.getElementById('post-title').value = post - title;
-    document.getElementById('post-description').value = post - description;
-    //var delete = //
-  
-    //esta funcion actualiza la informacion de los elementos editados//
-    boton.onclick = function () { //este boton va a guardar//
-  
-      var post = db.collection("users").doc("id").set({
-        title,
-        posted,
-      })
-      var titleNew = document.getElementById('post-title').value;
-      var descriptionNew = document.getElementById('post-description').value;
-  
-      return post.update({
-        title,
-        posted,
-      })
-    }
-      .then(() => {
-        console.log("Document successfully written!");
-      })
-      .catch((error) => {
-        console.error("Error writing document: ", error);
-      });
-  
+    var titleNew = document.getElementById('post-title').value;
+    var descriptionNew = document.getElementById('post-description').value;
+ 
+    return post.update({
+      title,
+      posted,
+    })
   }
-  const btnEditPost = document.getElementById('btnEditPost');
-  btnEditPost.addEventListener('click', (e) => {
-  
-    editPost('${doc.id}');
-  });
-  };
-  */
-  
+    .then(() => {
+      console.log("Document successfully written!");
+    })
+    .catch((error) => {
+      console.error("Error writing document: ", error);
+    });
+ 
+}
+const btnEditPost = document.getElementById('btnEditPost');
+btnEditPost.addEventListener('click', (e) => {
+ 
+  editPost('${doc.id}');
+});
+};*/
+
+};
 
   //funcion para editar post//
 
   export default wall;
 
-// const db = firebase.firestore();
-// const btnpost=document.getElementById("btnpost");
-// btnpost.addEventListener("click", async (e) =>{
+  // const db = firebase.firestore();
+  // const btnpost=document.getElementById("btnpost");
+  // btnpost.addEventListener("click", async (e) =>{
 
-// e.preventDefault();
+  // e.preventDefault();
 
-// const title = document.getElementById("post-title").value;
-// const posted = document.getElementById("post-description").value;
-// const response = await db.collection("posts").doc().set({
-//     title: title,
-//     posted: posted,
-// })
-// console.log(response)
+  // const title = document.getElementById("post-title").value;
+  // const posted = document.getElementById("post-description").value;
+  // const response = await db.collection("posts").doc().set({
+  //     title: title,
+  //     posted: posted,
+  // })
+  // console.log(response)
 
-// console.log(title, posted)
-// });
+  // console.log(title, posted)
+  // });
 
-// }
+  // }
 
-// console.log(title, posted)
-}
+  // console.log(title, posted)
+

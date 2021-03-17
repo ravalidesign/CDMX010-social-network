@@ -124,7 +124,7 @@ header label {
 
 /* Formulario de Iniciar sesión */
 
-.formLogin{
+.formLogIn{
 width: 300px;
 background:whitesmoke;
 padding: 40px 70px 40px 75px;
@@ -136,7 +136,7 @@ border-color:#020102;
 box-shadow: 30px 25px 70px -50px rgb(46, 43, 43);
 }
 
-.buttonLogin{
+.btnLogIn{
     background: #B82787;
     font-size: 10px;
     color: white;
@@ -267,20 +267,21 @@ font-size: 5px;
 /*boton de cerrar sesion*/
 .btnEnd {
     background-color:transparent;
-    width: 5px;
-    height: 5px;
+    width: 2em;
+    height: 2em;
+    border-color: transparent;
 }
-.headpost #btnEnd button{
-    margin-right: 3px;
-    position: fixed;
-    width: 5px;
-    height: 5px;
-   
-}
-.btnEnd button img{
-    width: 5px;
-    height: 5px;
+.btnEnd  img{
+    margin-left: 120px;
+    margin-bottom: 15px;
+    outline: none;
+    width: 2em;
+    height: 2em;
+    position:-webkit-sticky;
+    position: sticky;
+
     
+   
 }
 
 .postContainer2{
