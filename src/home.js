@@ -8,8 +8,6 @@ export const home = (target) => {
         <label for ="btnmenu"><img src="../assets/burgerbutton.png"></label>
         <ul>
 
-       
-        
          <li><a id="contact" href="#">Creadoras :3</a> </li>
         </ul>
         
@@ -23,8 +21,10 @@ export const home = (target) => {
     <button type= "button" class= "logInButton" id= "logInButton" href="#"> Inicia sesión </button>
 
     </header>
-    
-    <div class="imgp" <img src="../Assets/backgroundtwo" width="100%" ></div>
+    <body>
+    <div class="imgp" <img src="../Assets/backgroundtwo.jpg" width="100%" >
+    </div>
+    </body>
     `
     
     /*"Acerca de" será pantalla de publicacion*/

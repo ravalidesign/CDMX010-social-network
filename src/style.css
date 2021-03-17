@@ -84,16 +84,17 @@ font-family: 'Lato', sans-serif;
     background: transparent;
 }
  /*codigo de los iconos de registro*/
-/*.socialIcons{
+ /*
+.socialIcons{
    height: 25px;
    width: 25px;
    border-color: transparent;
    margin-right: -0px;
    margin-bottom: 8px;
    
-}*/
+}
    
-/*#facebookBtn{
+#facebookBtn{
     height: 25px;
     width: 25px;
     
@@ -107,11 +108,6 @@ font-family: 'Lato', sans-serif;
     width: 25px;
 }*/
 /*aqui termina codigo de los iconos de registro*/
-.imgp{
-    max-width: 500px;
-    margin: 0 auto;
-         }
-
 
 #btnmenu {
     display: none;
@@ -195,8 +191,6 @@ header label:hover{
        margin-right: -300px;
        
         }
-   
-
 
         }
 /*aqui comienza estilos de post*/
@@ -209,8 +203,9 @@ header label:hover{
     max-width: 60px;
     
 }
+/*contenedor editar publicacion*/
 .postContainer{
-background-color:transparent;
+    background-color:transparent;
     margin-bottom: 5px;
     text-align: center;
     max-height: max-content;
@@ -218,12 +213,74 @@ background-color:transparent;
     margin-left: auto;
     margin-right: auto;
     padding: 50px 50px 50px 50px;
-    border: 3px solid #B82787;
+    border: 3px solid rgb(17, 186, 192);
 }
+#post-title{
+background-color: transparent;
+border: 1px solid #B82787;
+position: sticky;
+top: -20px; 
+left: 40px;
+outline: none;
+margin-bottom: 40px;
+margin-top: -17px;
+padding: 10px;
+}
+#post-title:hover{
+    background-color: #d831a075;
+    outline: none;
+}
+#post-description{
+  background-color: transparent;
+  border: 1px solid #B82787;
+  position: sticky;
+  top: -20px; 
+  left: 40px;
+  outline: none;
+  margin-bottom: 20px;
+  margin-top: -17px;
+  padding: 30px;
+
+}
+#btnpost{
+    outline: none;
+    border-color: #B82787;
+    color: white;
+    background-color: mediumvioletred;
+    padding: 10px 15px 10px 15px;
+    border-radius: 3px;
+}
+
+#btnpost:hover{
+    border-color: darkturquoise;
+    outline: none;
+    box-shadow: 0 0 10px teal, 0 0 5px teal, 0 0 30px teal;
+}
+.titu{
+ font-size: 15px;
+
+}
+.postit{
+font-size: 5px;
+}
+
 /*boton de cerrar sesion*/
-#btnEnd{
-    margin-right: auto;
-    margin-left: auto;
+.btnEnd {
+    background-color:transparent;
+    width: 5px;
+    height: 5px;
+}
+.headpost #btnEnd button{
+    margin-right: 3px;
+    position: fixed;
+    width: 5px;
+    height: 5px;
+   
+}
+.btnEnd button img{
+    width: 5px;
+    height: 5px;
+    
 }
 
 .postContainer2{

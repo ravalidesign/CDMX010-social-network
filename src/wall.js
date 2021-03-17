@@ -4,11 +4,14 @@ export const wall = (target) => {
   const html = `
 <head>
 <div class= "headpost">
-<h1> PUBLICACIONES</h1>
+<h1></h1>
 <img class="imghead" src="../Assets/logo.png">
+
+<button class="btnEnd" id="btnEnd"><img src="../Assets/iconologout.png"></button>
+
 </div>
 </head>
-<button  id="btnEnd">Cerrar sesión</button>
+
 <div class="postContainer">
 <div class="post-card">
 <form id="task-form">
@@ -18,12 +21,11 @@ placeholder="titulo de tu post">
 
 <div class= "post">
 <textarea id="post-description" row="10" class="form-control"
-placeholder="Escribe un post :D"></textarea>
+placeholder="Escribe un post"></textarea>
 </div>
 
 <button class="btnpost" id="btnpost"> Comparte! </button>
-<button class="btnEditPost" id="btnEditPost"> Editar </button>
-<button class="btnDeletePost" id="btnDeletePost"> Eliminar </button>
+
 </form>
 </div>
 
@@ -77,9 +79,13 @@ placeholder="Escribe un post :D"></textarea>
       console.log(`${doc.id} => ${doc.data()}`);
       titleDos.innerHTML += `
      <div class="postContainer2"
-       <h2>Titulo</h2>
+   
+       <h4></h4>
+
        <h4>${doc.data().title}</h4>
-       <h2>publicación</h2>
+
+       <h1></h1>
+
        <h4>${doc.data().posted}</h4>
        
        <button class="btnEditPost" id="btnEditPost"> Editar </button>
@@ -90,93 +96,82 @@ placeholder="Escribe un post :D"></textarea>
     });
   });
 
-  //funcion para borrar post//
-
-
-  const deletePost = (id) => {
-
-    db.collection("post").doc("id").delete().then(() => {
-      console.log("Document successfully deleted!");
-    }).catch((error) => {
-      console.error("Error removing document: ", error);
+  
+    //funcion para borrar post//
+  
+    function deletePost () => (id) {
+  
+      db.collection("post").doc("id").delete().then(() => {
+        console.log("Document successfully deleted!");
+      }).catch((error) => {
+        console.error("Error removing document: ", error);
+      });
+  
+    }
+    const btnDeletePost = document.getElementById('btnDeletePost');
+    btnDeletePost.addEventListener('click', deletePost => {
+  
+      deletePost('${doc.id}');
     });
+    
 
+    //fin de borrar post ^//
+  
+    //inicio editar post//
+    /*
+  
+    db.collection("users").doc("id").set({
+      title,
+      posted,
+    })
+      .then(() => {
+        console.log("Document successfully written!");
+      })
+      .catch((error) => {
+        console.error("Error writing document: ", error);
+      });
+  
+  
+    const editPost = (id, post - title, post - description) => { //esta funcion trae elementos de la funcion save//
+    document.getElementById('post-title').value = post - title;
+    document.getElementById('post-description').value = post - description;
+    //var delete = //
+  
+    //esta funcion actualiza la informacion de los elementos editados//
+    boton.onclick = function () { //este boton va a guardar//
+  
+      var post = db.collection("users").doc("id").set({
+        title,
+        posted,
+      })
+      var titleNew = document.getElementById('post-title').value;
+      var descriptionNew = document.getElementById('post-description').value;
+  
+      return post.update({
+        title,
+        posted,
+      })
+    }
+      .then(() => {
+        console.log("Document successfully written!");
+      })
+      .catch((error) => {
+        console.error("Error writing document: ", error);
+      });
+  
   }
-  const btnDeletePost = document.getElementById('btnDeletePost');
-  btnDeletePost.addEventListener('click', (e) => {
-
-    deletePost('${doc.id}');
+  const btnEditPost = document.getElementById('btnEditPost');
+  btnEditPost.addEventListener('click', (e) => {
+  
+    editPost('${doc.id}');
   });
+  };
+  */
+  
 
-  //fin de borrar post ^//
+  //funcion para editar post//
 
-  //inicio editar post//
-
-  db.collection("users").doc("id").set({
-    title,
-    posted,
-  })
-    .then(() => {
-      console.log("Document successfully written!");
-    })
-    .catch((error) => {
-      console.error("Error writing document: ", error);
-    });
-
-
-  const editPost = (id, post - title, post - description) => { //esta funcion trae elementos de la funcion save//
-  document.getElementById('post-title').value = post - title;
-  document.getElementById('post-description').value = post - description;
-  //var delete = //
-
-  //esta funcion actualiza la informacion de los elementos editados//
-  boton.onclick = function () { //este boton va a guardar//
-
-    var post = db.collection("users").doc("id").set({
-      title,
-      posted,
-    })
-    var titleNew = document.getElementById('post-title').value;
-    var descriptionNew = document.getElementById('post-description').value;
-
-    return post.update({
-      title,
-      posted,
-    })
-  }
-    .then(() => {
-      console.log("Document successfully written!");
-    })
-    .catch((error) => {
-      console.error("Error writing document: ", error);
-    });
-
-}
-const btnEditPost = document.getElementById('btnEditPost');
-btnEditPost.addEventListener('click', (e) => {
-
-  editPost('${doc.id}');
-});
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//funcion para editar post//
-
-export default wall;
+  export default wall;
 
 // const db = firebase.firestore();
 // const btnpost=document.getElementById("btnpost");
@@ -197,32 +192,5 @@ export default wall;
 
 // }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // console.log(title, posted)
-// });
-
-
+}
