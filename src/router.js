@@ -6,6 +6,7 @@ import wall from "./wall.js";
 
 const rootDiv = document.getElementById("root");
 
+
 export const routes = {
     '/' : home,
     '/contact' :contact,
@@ -13,7 +14,9 @@ export const routes = {
     '/signUp' : signUp,
     '/wall' : wall,
   }
-  
+ 
+
+
   export const onNavigate = (pathname) => { 
     window.history.pushState( {}, pathname, window.location.origin + pathname); 
     const component = routes[pathname];
