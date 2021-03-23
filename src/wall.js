@@ -14,17 +14,18 @@ export const wall = (target) => {
 
 <div class="postContainer">
 <div class="post-card">
-<form id="task-form">
+<form id="post-form">
 <input autofocus type="text" id="post-title" class="form-control"
 placeholder="titulo de tu post">
+<textarea id="post-description" row="10" class="form-control"
+placeholder="Escribe un post"></textarea>
+<button class="btnpost" id="btnpost" > Comparte! </button>
 </div> 
 
 <div class= "post">
-<textarea id="post-description" row="10" class="form-control"
-placeholder="Escribe un post"></textarea>
+
 </div>
 
-<button class="btnpost" id="btnpost" > Comparte! </button>
 
 </form>
 </div>
@@ -44,8 +45,13 @@ placeholder="Escribe un post"></textarea>
     endSesion();
   });
 
-
+  //Utilizado para funcion/evento editado
   const db = firebase.firestore();
+  const getPost= (id) => db.collection('posts').doc(id).get();
+  const form = document.getElementById('post-form');
+  let editStatus= false;
+
+
 
   function save() {
     const title = document.getElementById('post-title').value;
@@ -69,6 +75,8 @@ placeholder="Escribe un post"></textarea>
   btnpost.addEventListener('click', (e) => {
     e.preventDefault();
     save();
+
+    
   });
 
   // leyendo datos//
@@ -94,8 +102,31 @@ placeholder="Escribe un post"></textarea>
        <h4>${post.posted}</h4>
        
        <button class="btnDelete" data-id="${post.id}">Eliminar</button>
+       <button class="btnEdit" data-id="${post.id}">Edita</button>
        </div>
        `;
+
+      //Función editado
+      const editBtns = document.querySelectorAll('.btnEdit');
+       editBtns.forEach(btn => {
+         btn.addEventListener('click', async (e) => { 
+           const doc= await getPost(e.target.dataset.id);
+           console.log(doc.data());
+           const postToEdit= doc.data();
+           form['post-title'].value = postToEdit.title;
+           form['post-description'].value = postToEdit.posted;
+
+
+           })
+          })
+
+
+
+
+
+
+
+
        function deletePost(id) {
 
         return db.collection('posts').doc(id).delete();
