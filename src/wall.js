@@ -14,17 +14,18 @@ export const wall = (target) => {
 
 <div class="postContainer">
 <div class="post-card">
-<form id="task-form">
-<input autofocus type="text" id="post-title" class="form-control"
+<form id="post-form">
+<input autofocus type="text" id="postTitle" class="form-control"
 placeholder="titulo de tu post">
+<textarea id="postDescription" row="10" class="form-control"
+placeholder="Escribe un post"></textarea>
+<button class="btnpost" id="btnpost" > Comparte! </button>
 </div> 
 
 <div class= "post">
-<textarea id="post-description" row="10" class="form-control"
-placeholder="Escribe un post"></textarea>
+
 </div>
 
-<button class="btnpost" id="btnpost" > Comparte! </button>
 
 </form>
 </div>
@@ -44,12 +45,18 @@ placeholder="Escribe un post"></textarea>
     endSesion();
   });
 
-
+  //Utilizado para funcion/evento editado
   const db = firebase.firestore();
+  const getPost= (id) => db.collection('posts').doc(id).get();
+  const form = document.getElementById('post-form');
+  let editStatus= false;
+  let id = ' ' ;
+
+
 
   function save() {
-    const title = document.getElementById('post-title').value;
-    const posted = document.getElementById('post-description').value;
+    const title = document.getElementById('postTitle').value;
+    const posted = document.getElementById('postDescription').value;
 
     db.collection('posts').add({
       title,
@@ -57,19 +64,18 @@ placeholder="Escribe un post"></textarea>
     })
       .then((docRef) => {
         console.log(docRef.id);
-        const title = document.getElementById('post-title').value = '';
-        const posted = document.getElementById('post-description').value = '';
+        const title = document.getElementById('postTitle').value = '';
+        const posted = document.getElementById('postDescription').value = '';
       })
       .catch((error) => {
         console.log(error);
       });
   }
 
-  const btnpost = document.getElementById('btnpost');
-  btnpost.addEventListener('click', (e) => {
-    e.preventDefault();
-    save();
-  });
+  function editPost (id, postData){
+     db.collection('posts').doc(id).update(postData)
+  }
+
 
   // leyendo datos//
   const titleDos = document.getElementById('title');
@@ -80,9 +86,7 @@ placeholder="Escribe un post"></textarea>
       console.log(post);
 
       post.id = doc.id
-      console.log(post.id);
-
-
+       console.log(post.id);
       //(`${doc.id} => ${doc.data()}`);
       titleDos.innerHTML += `
      <div class="postContainer2"
@@ -96,47 +100,66 @@ placeholder="Escribe un post"></textarea>
        <h4>${post.posted}</h4>
        
        <button class="btnDelete" data-id="${post.id}">Eliminar</button>
-       <button class="btnEdit" data-id=${post.id}" >Editar</button>
+       <button class="btnEdit" data-id="${post.id}">Edita</button>
        </div>
        `;
-     
-     
-     
-     
-     
-
-     // botones para editar con id//
-     
-     const btnsEdit = document.querySelectorAll('.btnEdit');
-     btnsEdit.forEach( btn => {
-      const edit = (id) => db.collection('posts').doc(id).get();
-       btn.addEventListener("click", async (e) => {
-         const doc = await edit(e.target.dataset.id);
+      
+      //Función editado
+      const editBtns = document.querySelectorAll('.btnEdit');
+       editBtns.forEach(btn => {
+         btn.addEventListener('click', async (e) => { 
+           const doc= await getPost(e.target.dataset.id);
+            const idA = e.target.dataset.id;
+            id= idA;
+           console.log(id);
            console.log(doc.data());
-       })
-     })
+           const postToEdit= doc.data();
+           form['postTitle'].value = postToEdit.title;
+           form['postDescription'].value = postToEdit.posted;
+           form['btnpost'].innerText= 'Actualiza!';  
+           editStatus= true;         // if (!editStatus){
+    //   save (title.value, description.value);
+    // }else {
+     
+  })
 
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     // Funcion Delete//
-    function deletePost(id) {
+    
+
+
+  })
+  const btnpost = document.getElementById('btnpost');
+  btnpost.addEventListener('click', async (e) => {
+    console.log(id);
+    e.preventDefault();
+    const postData = {
+      title: form.postTitle.value,
+      posted: form.postDescription.value,
+    }
+    console.log(postData);
+    if (editStatus === false ){
+      save();
+
+} else if (editStatus === true){ 
+  await editPost(id, postData);
+
+
+}
+
+  });
+
+  } )
+
+  
+  
+
+   
+
+
+
+
+
+
+       function deletePost(id) {
 
         return db.collection('posts').doc(id).delete();
       }
@@ -158,7 +181,7 @@ placeholder="Escribe un post"></textarea>
          
        })
     });
-  });
+  };
 
 // Función de editar//
 
@@ -194,5 +217,5 @@ placeholder="Escribe un post"></textarea>
 // })
 
  
-}
+
 export default wall;
