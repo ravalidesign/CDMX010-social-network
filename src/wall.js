@@ -76,11 +76,13 @@ placeholder="Escribe un post"></textarea>
   db.collection('posts').onSnapshot((querySnapshot) => {
     titleDos.innerHTML = '';
     querySnapshot.forEach((doc) => {
-      const post = doc.data();
+      let post = doc.data();
       console.log(post);
 
       post.id = doc.id
       console.log(post.id);
+
+
       //(`${doc.id} => ${doc.data()}`);
       titleDos.innerHTML += `
      <div class="postContainer2"
@@ -94,9 +96,47 @@ placeholder="Escribe un post"></textarea>
        <h4>${post.posted}</h4>
        
        <button class="btnDelete" data-id="${post.id}">Eliminar</button>
+       <button class="btnEdit" data-id=${post.id}" >Editar</button>
        </div>
        `;
-       function deletePost(id) {
+     
+     
+     
+     
+     
+
+     // botones para editar con id//
+     
+     const btnsEdit = document.querySelectorAll('.btnEdit');
+     btnsEdit.forEach( btn => {
+      const edit = (id) => db.collection('posts').doc(id).get();
+       btn.addEventListener("click", async (e) => {
+         const doc = await edit(e.target.dataset.id);
+           console.log(doc.data());
+       })
+     })
+
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     // Funcion Delete//
+    function deletePost(id) {
 
         return db.collection('posts').doc(id).delete();
       }
@@ -120,20 +160,38 @@ placeholder="Escribe un post"></textarea>
     });
   });
 
-
-  //funcion para borrar post//
-
-  
-    /*.then(() => {
-
-   
-   console.log("Document successfully deleted!");
- }).catch((error) => {
-   console.error("Error removing document: ", error);
- });*/
+// Función de editar//
 
 
-  ///}
+
+
+
+
+
+
+
+
+
+// function edit(id){
+//  db.collection("posts").doc(id).get().then(res =>{
+//    document.getElementById("post-title").value= res.data().title;
+//    document.getElementById("post-description").value= res.data().description;
+
+//  }).catch(error =>{
+//    alert(err)
+
+//  })
+// }
+
+// const editPost = document.querySelectorAll('.btnEdit');
+// editPost.forEach(item =>{
+//   item.addEventListener("click",()=>{
+//     const id = e.target.dataset.id;
+//            console.log("si funciono");
+//            edit(id)
+
+//   })
+// })
 
  
 }
