@@ -82,7 +82,7 @@ placeholder="Escribe un post"></textarea>
   db.collection('posts').onSnapshot((querySnapshot) => {
     titleDos.innerHTML = '';
     querySnapshot.forEach((doc) => {
-      const post = doc.data();
+      let post = doc.data();
       console.log(post);
 
       post.id = doc.id
@@ -183,20 +183,38 @@ placeholder="Escribe un post"></textarea>
     });
   };
 
-
-  //funcion para borrar post//
-
-  
-    /*.then(() => {
-
-   
-   console.log("Document successfully deleted!");
- }).catch((error) => {
-   console.error("Error removing document: ", error);
- });*/
+// Función de editar//
 
 
-  ///}
+
+
+
+
+
+
+
+
+
+// function edit(id){
+//  db.collection("posts").doc(id).get().then(res =>{
+//    document.getElementById("post-title").value= res.data().title;
+//    document.getElementById("post-description").value= res.data().description;
+
+//  }).catch(error =>{
+//    alert(err)
+
+//  })
+// }
+
+// const editPost = document.querySelectorAll('.btnEdit');
+// editPost.forEach(item =>{
+//   item.addEventListener("click",()=>{
+//     const id = e.target.dataset.id;
+//            console.log("si funciono");
+//            edit(id)
+
+//   })
+// })
 
  
 
