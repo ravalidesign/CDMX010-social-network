@@ -117,9 +117,7 @@ placeholder="Escribe un post"></textarea>
            form['postTitle'].value = postToEdit.title;
            form['postDescription'].value = postToEdit.posted;
            form['btnpost'].innerText= 'Actualiza!';  
-           editStatus= true;         // if (!editStatus){
-    //   save (title.value, description.value);
-    // }else {
+           editStatus= true;         
      
   })
 
